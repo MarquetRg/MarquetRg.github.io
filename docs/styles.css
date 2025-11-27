@@ -1,0 +1,198 @@
+:root{
+    --bg:#0b0f17;
+    --card:#111827;
+    --soft:#0f172a;
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+    --accent:#60a5fa;
+    --accent2:#34d399;
+    --border: rgba(255,255,255,.10);
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+    --radius: 18px;
+    --max: 1080px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    color:var(--text);
+    background:
+    radial-gradient(900px 350px at 15% 10%, rgba(96,165,250,.18), transparent 55%),
+    radial-gradient(900px 350px at 85% 15%, rgba(52,211,153,.14), transparent 60%),
+    linear-gradient(180deg, var(--bg), #070a10);
+    line-height:1.55;
+}
+
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+
+.wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px}
+
+header{
+    padding:26px 0 14px;
+    display:grid;
+    gap:14px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 14px;
+    border:1px solid var(--border);
+    background: rgba(17,24,39,.6);
+    border-radius:999px;
+    width: fit-content;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+}
+.dot{
+    height:10px; width:10px; border-radius:50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    box-shadow: 0 0 0 4px rgba(96,165,250,.12);
+}
+h1{
+    margin:0;
+    letter-spacing:-.02em;
+    line-height:1.1;
+    font-size: clamp(30px, 3.6vw, 46px);
+}
+.lead{
+    margin:0;
+    color:var(--muted);
+    max-width: 70ch;
+    font-size: 1.05rem;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap:18px;
+    margin-top: 16px;
+}
+@media (max-width: 920px){
+    .grid{grid-template-columns:1fr}
+}
+
+.card{
+    background: rgba(17,24,39,.75);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 18px;
+    backdrop-filter: blur(10px);
+}
+
+.card h2{
+    margin: 0 0 10px;
+    font-size: 1.15rem;
+    letter-spacing:-.01em;
+}
+.card p{margin:0 0 10px; color:var(--text)}
+.muted{color:var(--muted)}
+
+.quicklinks{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top: 12px;
+}
+.pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 12px;
+    border-radius:999px;
+    border:1px solid var(--border);
+    background: rgba(15,23,42,.65);
+    color:var(--text);
+}
+.pill:hover{border-color: rgba(96,165,250,.35); text-decoration:none}
+
+.kpi{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+}
+@media (max-width: 680px){
+    .kpi{grid-template-columns:1fr}
+}
+.kpi .box{
+    padding:14px;
+    border-radius: 14px;
+    border:1px solid var(--border);
+    background: rgba(7,10,16,.35);
+}
+.kpi .big{
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin:0;
+}
+.kpi .small{margin:6px 0 0; color:var(--muted); font-size:.95rem}
+
+.section{
+    margin-top: 18px;
+    display:grid;
+    gap: 14px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+@media (max-width: 900px){
+    .gallery{grid-template-columns:1fr}
+}
+
+figure{
+    margin:0;
+    border-radius: var(--radius);
+    overflow:hidden;
+    border:1px solid var(--border);
+    background: rgba(7,10,16,.35);
+    box-shadow: var(--shadow);
+}
+figure img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit: contain; /* conserva el gráfico sin recortar */
+    background: #0b1020;
+}
+figcaption{
+    padding: 12px 12px 14px;
+    color: var(--muted);
+    font-size: .95rem;
+    border-top: 1px solid var(--border);
+}
+.cap-title{
+    color: var(--text);
+    font-weight: 650;
+    display:block;
+    margin-bottom: 4px;
+}
+
+footer{
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: .95rem;
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note{
+    padding: 12px 14px;
+    border-radius: 14px;
+    border:1px dashed rgba(255,255,255,.18);
+    background: rgba(15,23,42,.45);
+    color: var(--muted);
+}

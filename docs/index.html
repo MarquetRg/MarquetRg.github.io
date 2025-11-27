@@ -1,11 +1,185 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>PROYECTO CALIDAD DEL AIRE</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calidad del aire — Sector sur-oriente RM</title>
+  <meta name="description" content="Proyecto de ciencia de datos con datos SINCA: CO, NOx, O₃ y PM2,5 (Estación La Florida)." />
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>Este proyecto consta de...</h1>
+  <div class="wrap">
+    <header>
+      <div class="badge"><span class="dot"></span><span>Proyecto · Calidad del Aire · SINCA</span></div>
+      <h1>Calidad del aire en el sector sur-oriente de la RM</h1>
+      <p class="lead">
+        Analizamos contaminantes atmosféricos medidos por SINCA (estación La Florida) para identificar
+        patrones temporales, relaciones entre variables y señales de mayor riesgo sanitario para la comunidad.
+      </p>
+
+      <div class="quicklinks">
+        <a class="pill" href="../Notebooks/notebook.ipynb">📓 Notebook</a>
+        <a class="pill" href="../datos/Raw/">🧪 Datos crudos</a>
+        <a class="pill" href="../datos/Procesados/">🧼 Datos procesados</a>
+        <a class="pill" href="https://sinca.mma.gob.cl/index.php/estacion/index/key/D12" target="_blank" rel="noreferrer noopener">🔗 SINCA</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Preguntas de Investigación</h2>
+        <ol class="research-questions">
+          <li>¿Cómo se comparan los niveles de monóxido de carbono (CO) en el sector con los de otros contaminantes atmosféricos?</li>
+          <li>¿Existen tendencias de mejora o deterioro en los niveles de material particulado fino (PM2,5) en los últimos años?</li>
+          <li>¿Qué relación existe entre los niveles de ozono (O₃) y los de óxidos de nitrógeno (NOx) en el sector?</li>
+          <li>¿Es posible construir un modelo de predicción de los niveles de PM2,5 a partir de variables como día de la semana, hora del día y concentración de otros contaminantes?</li>
+          <li>¿Qué contaminantes presentan mayor riesgo sanitario según su frecuencia de superación de las normas de calidad ambiental en Chile?</li>
+        </ol>
+
+        <div class="kpi">
+          <div class="box">
+            <p class="big">PM2,5</p>
+            <p class="small">Tendencias temporales y modelo predictivo</p>
+          </div>
+          <div class="box">
+            <p class="big">O₃ vs NOx</p>
+            <p class="small">Relación química atmosférica</p>
+          </div>
+          <div class="box">
+            <p class="big">Riesgo sanitario</p>
+            <p class="small">Superación de normas ambientales</p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>Equipo</h2>
+        <p class="muted" style="margin-top:-4px">Completa con nombres y roles:</p>
+        <ul>
+          <li><strong>Nombre 1</strong> — limpieza, EDA, visualizaciones</li>
+          <li><strong>Nombre 2</strong> — análisis, discusión, conclusiones</li>
+          <li><strong>Nombre 3</strong> — documentación, web, informe</li>
+        </ul>
+        <div class="note">
+          <strong>Tip:</strong> esta página resume lo importante para público general.
+          Los detalles técnicos están en el notebook.
+        </div>
+      </aside>
+    </div>
+
+    <section class="section">
+      <div class="card">
+        <h2>Hallazgos clave</h2>
+        <ul>
+          <li><strong>PM2,5 muestra tendencias variables</strong> con mejoras en algunos periodos pero persistencia de episodios críticos.</li>
+          <li><strong>Relación O₃-NOx compleja</strong> que refleja procesos fotoquímicos y condiciones meteorológicas.</li>
+          <li><strong>Modelo predictivo viable</strong> para PM2,5 usando variables temporales y de otros contaminantes.</li>
+          <li><strong>CO presenta niveles relativamente bajos</strong> comparado con otros contaminantes en el sector.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Visualizaciones por pregunta de investigación</h2>
+        <p class="muted">Cada gráfico responde específicamente a una de nuestras preguntas:</p>
+      </div>
+
+      <div class="gallery">
+        <!-- Pregunta 1: Comparación de CO -->
+        <figure>
+          <img src="img/1.png" alt="Comparación de niveles de CO con otros contaminantes">
+          <figcaption>
+            <span class="cap-title">Pregunta 1: Comparación de niveles de CO</span>
+            Análisis comparativo que muestra cómo los niveles de monóxido de carbono se relacionan con otros contaminantes principales en el sector.
+          </figcaption>
+        </figure>
+
+        <!-- Pregunta 2: Tendencia PM2,5 -->
+        <figure>
+          <img src="img/2.png" alt="Tendencia temporal de PM2,5 en los últimos años">
+          <figcaption>
+            <span class="cap-title">Pregunta 2: Tendencia temporal de PM2,5</span>
+            Evolución de las concentraciones de material particulado fino mostrando periodos de mejora, deterioro o estabilidad.
+          </figcaption>
+        </figure>
+
+        <!-- Pregunta 3: Relación O3-NOx -->
+        <figure>
+          <img src="img/3.png" alt="Relación entre ozono y óxidos de nitrógeno">
+          <figcaption>
+            <span class="cap-title">Pregunta 3: Relación O₃ vs NOx</span>
+            Análisis de la correlación y patrones temporales entre estos contaminantes, crucial para entender la química atmosférica local.
+          </figcaption>
+        </figure>
+
+        <!-- Pregunta 4: Modelo predictivo PM2,5 -->
+        <figure>
+          <img src="img/4_1.png" alt="Resultados del modelo predictivo de PM2,5">
+          <figcaption>
+            <span class="cap-title">Pregunta 4: Modelo predictivo de PM2,5</span>
+            Promedio de PM2.5 por hora del dia
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="img/4_2.png" alt="Resultados del modelo predictivo de PM2,5">
+          <figcaption>
+            <span class="cap-title">Pregunta 4: Modelo predictivo de PM2,5</span>
+            Promedio de PM2.5 poe dia de la semana
+          </figcaption>
+        </figure>
+
+        <!-- Pregunta 5: Superación de normas -->
+        <figure>
+          <img src="img/5.png" alt="Frecuencia de superación de normas por contaminante">
+          <figcaption>
+            <span class="cap-title">Pregunta 5: Riesgo sanitario por superación de normas</span>
+            Análisis comparativo de la frecuencia con que cada contaminante supera los límites establecidos en la normativa chilena.
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="card">
+        <h2>Respuestas a las preguntas de investigación</h2>
+        <div class="answers">
+          <div class="answer-item">
+            <h3>1. Comparación de niveles de CO</h3>
+            <p>El <strong>monóxido de carbono presenta niveles relativamente bajos</strong> comparado con PM2,5 y O₃, mostrando menor variabilidad temporal y manteniéndose generalmente dentro de los límites normativos.</p>
+          </div>
+          <div class="answer-item">
+            <h3>2. Tendencia de PM2,5</h3>
+            <p>Se observa una <strong>tendencia mixta con mejoras interanuales</strong> pero persistencia de episodios críticos en invierno, reflejando la complejidad de las fuentes y condiciones meteorológicas.</p>
+          </div>
+          <div class="answer-item">
+            <h3>3. Relación O₃ vs NOx</h3>
+            <p>Existe una <strong>relación inversa estacional y diaria</strong> característica, donde el ozono aumenta con la radiación solar mientras los NOx disminuyen, mostrando el ciclo fotoquímico típico.</p>
+          </div>
+          <div class="answer-item">
+            <h3>4. Modelo predictivo de PM2,5</h3>
+            <p>Es <strong>posible predecir niveles de PM2,5 con precisión moderada-alta</strong> usando variables como hora, día de semana, y concentraciones de otros contaminantes como O₃ y NOx.</p>
+          </div>
+          <div class="answer-item">
+            <h3>5. Riesgo sanitario por superación de normas</h3>
+            <p><strong>PM2,5 presenta el mayor riesgo sanitario relativo</strong> seguido por O₃, basado en la frecuencia y magnitud de superación de los límites establecidos en la normativa chilena.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Limitaciones</h2>
+        <ul>
+          <li>Los datos provienen de una sola estación (representatividad espacial limitada)</li>
+          <li>No se incluyeron variables meteorológicas en el modelo predictivo</li>
+          <li>El periodo de análisis puede no capturar tendencias de largo plazo</li>
+          <li>Posibles gaps en los datos por mantención de equipos</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div>Hecho con datos abiertos · SINCA (MMA Chile)</div>
+      <div>GitHub Pages · <span class="muted">Actualiza los textos y nombres del equipo</span></div>
+    </footer>
+  </div>
 </body>
 </html>
