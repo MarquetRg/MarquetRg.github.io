@@ -196,3 +196,43 @@ footer{
     background: rgba(15,23,42,.45);
     color: var(--muted);
 }
+
+figure a {
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: var(--radius) var(--radius) 0 0;
+  overflow: hidden;
+}
+
+figure a:hover {
+  transform: translateY(-2px);
+}
+
+figure a:hover img {
+  opacity: 0.9;
+}
+
+/* Indicador visual de que es clickeable */
+.click-hint {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--accent);
+  background: rgba(96, 165, 250, 0.1);
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+/* Cursor pointer para indicar que es clickeable */
+figure a {
+  cursor: pointer;
+}
+
+/* Efecto sutil en la imagen */
+figure img {
+  transition: opacity 0.2s ease;
+}
+
+figure a:hover img {
+  opacity: 0.85;
+}
